@@ -1,6 +1,6 @@
 ﻿Imports System.IO
 
-Public Class Form4
+Public Class FormImportPic
 
     Dim stream As Stream
     Dim bmp As Bitmap

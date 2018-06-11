@@ -1,6 +1,6 @@
 ﻿Imports System.IO
 
-Public Class Form5
+Public Class FormDraw
 
     Dim paintDown = 0
     Dim bmpToSave As Bitmap

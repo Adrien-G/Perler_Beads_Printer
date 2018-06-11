@@ -1,7 +1,7 @@
 ﻿Imports System.IO
 Imports System.IO.Ports
 
-Public Class Form2
+Public Class FormCalibrate
     Private Delegate Sub SetLabelDelegate(ByVal text As String)
     Private objDelegate As SetLabelDelegate
 
@@ -11,32 +11,32 @@ Public Class Form2
         TextBox1.AppendText( _
         "#include <Servo.h>" & vbCrLf & _
         "#include <Stepper.h>" & vbCrLf & vbCrLf & _
-        "#define STEP_ORIGIN_X " & Form3.TextBox3DeplacementXInitial.Text & vbCrLf & _
-        "#define STEP_ORIGIN_Y " & Form3.TextBoxDeplacementYInitial.Text & vbCrLf & _
-        "#define STEP_ORIGIN_CH " & Form3.TextBoxInitVersChargeur1.Text & vbCrLf & _
-        "#define STEP1X " & Form3.step1X.Text & vbCrLf & _
-        "#define STEP1Y " & Form3.step1Y.Text & vbCrLf & _
-        "#define STEP1CH " & Form3.TextBoxEspaceEntreChargeur.Text & vbCrLf & _
-        "#define CHARGER_TOTAL_CAPACITY " & Form3.TextBoxChargerCapacity.Text & vbCrLf & _
+        "#define STEP_ORIGIN_X " & FormConfigure.TextBox3DeplacementXInitial.Text & vbCrLf & _
+        "#define STEP_ORIGIN_Y " & FormConfigure.TextBoxDeplacementYInitial.Text & vbCrLf & _
+        "#define STEP_ORIGIN_CH " & FormConfigure.TextBoxInitVersChargeur1.Text & vbCrLf & _
+        "#define STEP1X " & FormConfigure.step1X.Text & vbCrLf & _
+        "#define STEP1Y " & FormConfigure.step1Y.Text & vbCrLf & _
+        "#define STEP1CH " & FormConfigure.TextBoxEspaceEntreChargeur.Text & vbCrLf & _
+        "#define CHARGER_TOTAL_CAPACITY " & FormConfigure.TextBoxChargerCapacity.Text & vbCrLf & _
         "#define STEPS  48*64" & vbCrLf & vbCrLf & _
         "int chargerX = 0;" & vbCrLf & _
         "int chargerY = 0;" & vbCrLf & _
         "int chargerCh = 0;" & vbCrLf & _
-        "Stepper StepperX(STEPS," & Form3.ComboBoxPaPX.Text & ");" & vbCrLf & _
-        "Stepper StepperY(STEPS," & Form3.ComboBoxPaPY.Text & ");" & vbCrLf & _
-        "Stepper StepperCh(STEPS," & Form3.ComboBoxPaPCh.Text & ");" & vbCrLf & vbCrLf & _
+        "Stepper StepperX(STEPS," & FormConfigure.ComboBoxPaPX.Text & ");" & vbCrLf & _
+        "Stepper StepperY(STEPS," & FormConfigure.ComboBoxPaPY.Text & ");" & vbCrLf & _
+        "Stepper StepperCh(STEPS," & FormConfigure.ComboBoxPaPCh.Text & ");" & vbCrLf & vbCrLf & _
         "void setup() {" & vbCrLf & _
         "    Serial.begin(9600);" & vbCrLf & _
-        "    pinMode(" & Form3.ComboBoxBoutonX.Text & ", INPUT); //bouton X" & vbCrLf & _
-        "    pinMode(" & Form3.ComboBoxBoutonY.Text & ", INPUT);//bouton Y" & vbCrLf & _
-        "    pinMode(" & Form3.ComboBoxBoutonCh.Text & ", INPUT);//bouton chargeur" & vbCrLf & _
+        "    pinMode(" & FormConfigure.ComboBoxBoutonX.Text & ", INPUT); //bouton X" & vbCrLf & _
+        "    pinMode(" & FormConfigure.ComboBoxBoutonY.Text & ", INPUT);//bouton Y" & vbCrLf & _
+        "    pinMode(" & FormConfigure.ComboBoxBoutonCh.Text & ", INPUT);//bouton chargeur" & vbCrLf & _
         "    Serial.println(""Initialisation..."");" & vbCrLf & _
         "    delay(1000);" & vbCrLf & vbCrLf & _
         "    Serial.println(""Calibrage..."");" & vbCrLf & _
         "    CalibratePrinter();" & vbCrLf & vbCrLf & _
-        "    StepperX.setSpeed(" & Form3.ComboBoxVitesseMoteursX.Text & ");" & vbCrLf & _
-        "    StepperY.setSpeed(" & Form3.ComboBoxVitesseMoteursY.Text & ");" & vbCrLf & _
-        "    StepperCh.setSpeed(" & Form3.ComboBoxVitesseMoteursCh.Text & ");" & vbCrLf & _
+        "    StepperX.setSpeed(" & FormConfigure.ComboBoxVitesseMoteursX.Text & ");" & vbCrLf & _
+        "    StepperY.setSpeed(" & FormConfigure.ComboBoxVitesseMoteursY.Text & ");" & vbCrLf & _
+        "    StepperCh.setSpeed(" & FormConfigure.ComboBoxVitesseMoteursCh.Text & ");" & vbCrLf & _
         "    Serial.println(""pret !"");" & vbCrLf & _
         "}" & vbCrLf & vbCrLf)
         TextBox1.AppendText("/////////////////end generated Setup part code" & vbCrLf)
@@ -50,48 +50,48 @@ Public Class Form2
         TextBox1.AppendText("/////////////////generated Functions part code" & vbCrLf)
         TextBox1.AppendText( _
         "void CalibratePrinter(){" & vbCrLf & _
-        "    StepperX.setSpeed(" & Form3.ComboBoxVitesseMoteurCalibrage.Text & ");" & vbCrLf & _
-        "    StepperY.setSpeed(" & Form3.ComboBoxVitesseMoteurCalibrage.Text & ");" & vbCrLf & _
-        "    StepperCh.setSpeed(" & Form3.ComboBoxVitesseMoteurCalibrage.Text & ");" & vbCrLf & _
+        "    StepperX.setSpeed(" & FormConfigure.ComboBoxVitesseMoteurCalibrage.Text & ");" & vbCrLf & _
+        "    StepperY.setSpeed(" & FormConfigure.ComboBoxVitesseMoteurCalibrage.Text & ");" & vbCrLf & _
+        "    StepperCh.setSpeed(" & FormConfigure.ComboBoxVitesseMoteurCalibrage.Text & ");" & vbCrLf & _
         "    //decalage X" & vbCrLf & _
         "    Serial.println(""Calibrage X"");" & vbCrLf & _
-        "    if(digitalRead(" & Form3.ComboBoxBoutonX.Text & ")){" & vbCrLf & _
-        "        while(digitalRead(" & Form3.ComboBoxBoutonX.Text & "))" & vbCrLf & _
+        "    if(digitalRead(" & FormConfigure.ComboBoxBoutonX.Text & ")){" & vbCrLf & _
+        "        while(digitalRead(" & FormConfigure.ComboBoxBoutonX.Text & "))" & vbCrLf & _
         "            StepperX.step(1);" & vbCrLf & _
         "        StepperX.step(20);" & vbCrLf & _
         "    }" & vbCrLf & _
-        "    while(digitalRead(" & Form3.ComboBoxBoutonX.Text & ") == 0)" & vbCrLf & _
+        "    while(digitalRead(" & FormConfigure.ComboBoxBoutonX.Text & ") == 0)" & vbCrLf & _
         "        StepperX.step(-1);" & vbCrLf & _
         "    //decalage Y" & vbCrLf & _
         "    Serial.println(""Calibrage Y"");" & vbCrLf & _
-        "    if(digitalRead(" & Form3.ComboBoxBoutonY.Text & ")){" & vbCrLf & _
-        "        while(digitalRead(" & Form3.ComboBoxBoutonY.Text & "))" & vbCrLf & _
+        "    if(digitalRead(" & FormConfigure.ComboBoxBoutonY.Text & ")){" & vbCrLf & _
+        "        while(digitalRead(" & FormConfigure.ComboBoxBoutonY.Text & "))" & vbCrLf & _
         "            StepperY.step(1);" & vbCrLf & _
         "        StepperY.step(20);" & vbCrLf & _
         "    }" & vbCrLf & _
-        "    while(digitalRead(" & Form3.ComboBoxBoutonY.Text & ") == 0)" & vbCrLf & _
+        "    while(digitalRead(" & FormConfigure.ComboBoxBoutonY.Text & ") == 0)" & vbCrLf & _
         "        StepperY.step(-1);" & vbCrLf & _
         "    //decalage Charger" & vbCrLf & _
         "    Serial.println(""Calibrage Chargeur"");" & vbCrLf & _
-        "    if(digitalRead(" & Form3.ComboBoxBoutonCh.Text & ")){" & vbCrLf & _
-        "        while(digitalRead(" & Form3.ComboBoxBoutonCh.Text & "))" & vbCrLf & _
+        "    if(digitalRead(" & FormConfigure.ComboBoxBoutonCh.Text & ")){" & vbCrLf & _
+        "        while(digitalRead(" & FormConfigure.ComboBoxBoutonCh.Text & "))" & vbCrLf & _
         "            StepperCh.step(1);" & vbCrLf & _
         "        StepperCh.step(20);" & vbCrLf & _
         "    }" & vbCrLf & _
-        "    while(digitalRead(" & Form3.ComboBoxBoutonCh.Text & ") == 0)" & vbCrLf & _
+        "    while(digitalRead(" & FormConfigure.ComboBoxBoutonCh.Text & ") == 0)" & vbCrLf & _
         "        StepperCh.step(-1);" & vbCrLf & _
         "    Serial.println(""Calibrage placement ch"");" & vbCrLf & _
-        "    StepperCh.step(-" & Form3.TextBoxDecalageCalibrageCh.Text & ");" & vbCrLf & _
+        "    StepperCh.step(-" & FormConfigure.TextBoxDecalageCalibrageCh.Text & ");" & vbCrLf & _
         "    " & vbCrLf & _
         "    Serial.println(""Calibrage placement Y"");" & vbCrLf & _
-        "    StepperY.step(" & Form3.TextBoxDecalageCalibrageY.Text & ");" & vbCrLf & _
+        "    StepperY.step(" & FormConfigure.TextBoxDecalageCalibrageY.Text & ");" & vbCrLf & _
         "    " & vbCrLf & _
         "    Serial.println(""Calibrage placement X"");" & vbCrLf & _
-        "    StepperX.step(-" & Form3.TextBoxDecalageCalibrageX.Text & ");" & vbCrLf & _
+        "    StepperX.step(-" & FormConfigure.TextBoxDecalageCalibrageX.Text & ");" & vbCrLf & _
         "    " & vbCrLf & _
-        "    StepperX.setSpeed(" & Form3.ComboBoxVitesseMoteursX.Text & ");" & vbCrLf & _
-        "    StepperY.setSpeed(" & Form3.ComboBoxVitesseMoteursY.Text & ");" & vbCrLf & _
-        "    StepperCh.setSpeed(" & Form3.ComboBoxVitesseMoteursCh.Text & ");" & vbCrLf & _
+        "    StepperX.setSpeed(" & FormConfigure.ComboBoxVitesseMoteursX.Text & ");" & vbCrLf & _
+        "    StepperY.setSpeed(" & FormConfigure.ComboBoxVitesseMoteursY.Text & ");" & vbCrLf & _
+        "    StepperCh.setSpeed(" & FormConfigure.ComboBoxVitesseMoteursCh.Text & ");" & vbCrLf & _
         "}" & vbCrLf & vbCrLf)
         TextBox1.AppendText("/////////////////end generated Functions part code" & vbCrLf)
 
