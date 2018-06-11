@@ -1,0 +1,15 @@
+C:\Users\Adrien\Desktop\creation\logiciel\En Visual Basic\PerlerPrinterBeta\PerlerPrinterBeta\bin\Debug\PerlerPrinterBeta.exe
+C:\Users\Adrien\Desktop\creation\logiciel\En Visual Basic\PerlerPrinterBeta\PerlerPrinterBeta\bin\Debug\PerlerPrinterBeta.pdb
+C:\Users\Adrien\Desktop\creation\logiciel\En Visual Basic\PerlerPrinterBeta\PerlerPrinterBeta\bin\Debug\PerlerPrinterBeta.xml
+C:\Users\Adrien\Desktop\creation\logiciel\En Visual Basic\PerlerPrinterBeta\PerlerPrinterBeta\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Adrien\Desktop\creation\logiciel\En Visual Basic\PerlerPrinterBeta\PerlerPrinterBeta\obj\Debug\PerlerPrinterBeta.Form1.resources
+C:\Users\Adrien\Desktop\creation\logiciel\En Visual Basic\PerlerPrinterBeta\PerlerPrinterBeta\obj\Debug\PerlerPrinterBeta.Resources.resources
+C:\Users\Adrien\Desktop\creation\logiciel\En Visual Basic\PerlerPrinterBeta\PerlerPrinterBeta\obj\Debug\PerlerPrinterBeta.vbproj.GenerateResource.Cache
+C:\Users\Adrien\Desktop\creation\logiciel\En Visual Basic\PerlerPrinterBeta\PerlerPrinterBeta\obj\Debug\PerlerPrinterBeta.exe
+C:\Users\Adrien\Desktop\creation\logiciel\En Visual Basic\PerlerPrinterBeta\PerlerPrinterBeta\obj\Debug\PerlerPrinterBeta.xml
+C:\Users\Adrien\Desktop\creation\logiciel\En Visual Basic\PerlerPrinterBeta\PerlerPrinterBeta\obj\Debug\PerlerPrinterBeta.pdb
+C:\Users\Adrien\Desktop\creation\logiciel\En Visual Basic\PerlerPrinterBeta\PerlerPrinterBeta\obj\Debug\PerlerPrinterBeta.Form2.resources
+C:\Users\Adrien\Desktop\creation\logiciel\En Visual Basic\PerlerPrinterBeta\PerlerPrinterBeta\bin\Debug\PerlerPrinterBeta.exe.config
+C:\Users\Adrien\Desktop\creation\logiciel\En Visual Basic\PerlerPrinterBeta\PerlerPrinterBeta\obj\Debug\PerlerPrinterBeta.Form3.resources
+C:\Users\Adrien\Desktop\creation\logiciel\En Visual Basic\PerlerPrinterBeta\PerlerPrinterBeta\obj\Debug\PerlerPrinterBeta.Form4.resources
+C:\Users\Adrien\Desktop\creation\logiciel\En Visual Basic\PerlerPrinterBeta\PerlerPrinterBeta\obj\Debug\PerlerPrinterBeta.Form5.resources
